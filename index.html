@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>JFetter Web Developer</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+</head>
+<body ng-app="jfet">
+	
+	<div class ="container well" ng-controller="navCtrl">
+
+			<div class="dropdown">
+		    <a class="btn" data-toggle="dropdown" href="#">Projects <b class="caret"></b></a>
+		    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownProjects">
+		      <li ng-repeat="project in projects">
+		        <a href={{project.url}}>{{project.name}}</a>
+		      </li>
+		    </ul>
+			<a ui-sref="resume" class="btn">Resume</a>
+			<a href="#" class="btn">Blog</a>
+			<a href="#" class="btn">Home</a>
+			<a href="#" class="btn">Contact</a>
+
+
+	  </div>
+		 <!--  <ul>
+		    <li class="topMenu"> <a href= "index.html"> Home</a> </li>
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="http://goo.gl/mYL6JF">Hangman</a></li>
+		            <li><a href="http://unfetteredbook.com">Book Site</a></li>
+		            <li><a href="https://github.com/jfetter">My Git Hub</a></li>
+		          </ul>
+		        </li>
+		    <li class="dropdown topMenu">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blogs <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li class="topMenu"><a href ="http://jillience.blogspot.com/">Code To Live By</a></li>
+		            <li class="topMenu"><a href="http://ntgtech.blogspot.com/">Not To Get Technical</a></li>
+		          </ul>
+		        </li>
+		    <li> <a href="images/resume2015.png">Resume</a></li>
+		  </ul> -->
+
+	</div>
+
+	<div ui-view></div>
+
+<hr>
+		<div class="container" ng-controller="footerCtrl">{{foot1}}
+
+			<a href="#" class="twitter"><i class="fa fa-twitter-square"></i></a>
+			<a href="#" class="wordpress"><i class="fa fa-wordpress"></i></a>
+			<a href="#" class="git"><i class="fa fa-git-square"></i></a>
+			<a href="#" class="linkedin"><i class="fa fa-linkedin-square"></i></a>
+	</div>
+
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+	<script src="app.js"></script>
+	<script src="templateControllers.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>

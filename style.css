@@ -1,0 +1,35 @@
+.topMenu{
+	text-decoration: none;
+ 	color: purple; 
+}
+
+res-name{
+	font-family: trebuchet;
+	font-style: small-caps;
+}
+
+.logo{
+	max-width: 40vw;
+	max-height: 40vw;
+}
+
+.centered{
+	text-align: center;
+}
+
+.title{
+	text-align: center;
+}
+
+.home, body{
+	background-color: #717ccb;
+	color:pink;
+}
+
+.left-butt{
+	float
+}
+
+/*.page{
+	background-image: url("jplug.png");
+}*/
