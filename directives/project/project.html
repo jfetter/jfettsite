@@ -1,5 +1,11 @@
 <div class="row">
-	<img src={{poject-image}} alt="">
-	<button ng-click={{}}>Git Hub</button>
-	<button ng-click={{}}>App</button>
+	 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownProjects">
+		      <li ng-repeat="project in projects">
+		        <a href={{project.url}}>{{project.name}}</a>
+		      </li>
+
+		    </ul>
+
+	<img ng-src={{poject-image}} alt="">
+
 </div>

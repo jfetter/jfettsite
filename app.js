@@ -1,13 +1,15 @@
 "use strict";
 
-angular.module("jfet", ["ui.router", "ui.bootstrap"])
+angular.module("jfet", [ "ui.bootstrap"])
 
-.config(function( $stateProvider, $urlRouterProvider){
+.config(function( ){
+//$stateProvider, $urlRouterProvider
 
-	$urlRouterProvider.otherwise("/home");
+	// $urlRouterProvider.otherwise("/home");
 
-	$stateProvider
-	.state("home", {url:"/home", templateUrl:"templates/home.html", controller: "homeCtrl"})
-	.state("resume", {url:"/resume", templateUrl: "templates/resume.html", controller: "resumeCtrl"})
+	// $stateProvider
+	// .state("home", {url:"/home", templateUrl:"templates/home.html", controller: "navCtrl"})
+	// .state("home.resume", {url:"/home/resume", templateUrl: "templates/resume.html", controller: "navCtrl"})
+	// .state("home.blog", {url:"/home/resume", templateUrl: "templates/blog.html", controller: "navCtrl"} )
 })
 

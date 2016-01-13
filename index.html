@@ -1,72 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en" ng-app="jfet">
 <head>
 	<meta charset="UTF-8">
 	<title>JFetter Web Developer</title>
-	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="https://bootswatch.com/yeti/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
 
 	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
 </head>
-<body ng-app="jfet">
+<body ng-controller="navCtrl">
+
+	<div class="navbar navbar-static-top">
+		<nav-bar />
+	</div>
+	<!-- 	<div ui-view></div> -->
+
+
+	<div class="container home">
+
+		<div class="row">
+			<div class="col-xs-12">
+			<h1 class="title">{{title}}</h1>
+			<h3 class="title">{{subtitle}}</h3>
+		</div>
+	</div>
+
+	<div class="row">
+		 <!-- LEFT HALF SCREEN IS CON BUBBLES -->
+	<div  ng-show="showProjects" class="projects-view text-center col-xs-6 ">
+		<div  class="row each-project" ng-repeat="project in projects">
+			<div class="col-xs-10" >
+				<img ng-src={{project.img}} alt="" width="200">
+			<div class="row">
+				<a class="btn btn-success" ng-href={{project.github}} >Git Hub</a>
+				<a class="btn btn-info" ng-href={{project.url}}>App</a>
+				</div>
+			</div>
+		</div>
+	</div>
+ <!-- OR CON BUBBLES -->
+
+<div ng-hide="showProjects || showContact" class="con-bubbles text-left col-xs-6">
+	<div class="row">
+	<div class="col-sm-4">
+		<div class="triangle-isosceles">
+			<span>{{talkingPoints.comment}}</span>
+		</div>
+	</div>
+		<div class="col-sm-4">
+		<div  class="triangle-isosceles2">
+			<span>{{talkingPoints.response}}</span>
+		</div>
+	</div>
+	</div>
 	
-	<div class ="container well" ng-controller="navCtrl">
+		<img ng-src="images/sil-talk.png" alt="">
+	
 
-			<div class="dropdown">
-		    <a class="btn" data-toggle="dropdown" href="#">Projects <b class="caret"></b></a>
-		    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownProjects">
-		      <li ng-repeat="project in projects">
-		        <a href={{project.url}}>{{project.name}}</a>
-		      </li>
-		    </ul>
-			<a ui-sref="resume" class="btn">Resume</a>
-			<a href="#" class="btn">Blog</a>
-			<a href="#" class="btn">Home</a>
-			<a href="#" class="btn">Contact</a>
+</div>
 
 
-	  </div>
-		 <!--  <ul>
-		    <li class="topMenu"> <a href= "index.html"> Home</a> </li>
-		        <li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
-		          <ul class="dropdown-menu">
-		            <li><a href="http://goo.gl/mYL6JF">Hangman</a></li>
-		            <li><a href="http://unfetteredbook.com">Book Site</a></li>
-		            <li><a href="https://github.com/jfetter">My Git Hub</a></li>
-		          </ul>
-		        </li>
-		    <li class="dropdown topMenu">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blogs <span class="caret"></span></a>
-		          <ul class="dropdown-menu">
-		            <li class="topMenu"><a href ="http://jillience.blogspot.com/">Code To Live By</a></li>
-		            <li class="topMenu"><a href="http://ntgtech.blogspot.com/">Not To Get Technical</a></li>
-		          </ul>
-		        </li>
-		    <li> <a href="images/resume2015.png">Resume</a></li>
-		  </ul> -->
+	</div>	
 
+
+
+
+	<div class="contact-display" ng-show="showContact">
+			<contact-display />
 	</div>
-
-	<div ui-view></div>
-
-<hr>
-		<div class="container" ng-controller="footerCtrl">{{foot1}}
-
-			<a href="#" class="twitter"><i class="fa fa-twitter-square"></i></a>
-			<a href="#" class="wordpress"><i class="fa fa-wordpress"></i></a>
-			<a href="#" class="git"><i class="fa fa-git-square"></i></a>
-			<a href="#" class="linkedin"><i class="fa fa-linkedin-square"></i></a>
-	</div>
+		<div class="navbar-static-bottom">
+			<footer-bar  />
+		</div>
 
 	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<!-- <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script> -->
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
 	<script src="app.js"></script>
-	<script src="templateControllers.js"></script>
 	<script src="main.js"></script>
+	<!-- <script src="templateControllers.js"></script> -->
+	<script src="directives/navbar/nav-bar.js"></script>
+	<script src="directives/contact/contact.js"></script>
+	<script src="directives/project/project.js"></script>
+	<script src="directives/footer-bar/footer-bar.js"></script>
 </body>
 </html>

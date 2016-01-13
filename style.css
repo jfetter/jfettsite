@@ -1,20 +1,92 @@
+.nav-btn{
+	color: pink;
+}
+
+.slide-down{
+	margin-top: 25vh;
+}
+
+.each-project{
+	margin: 5%;
+}
+
+.contact-display{
+
+}
+
+.projects-view{
+	margin: 5% ;
+}
+
+/*speech bubble style from: http://nicolasgallagher.com/pure-css-speech-bubbles */
+.triangle-isosceles {
+  position: relative;
+  padding: 5%;
+  margin: 5em 0 -5em;
+  color: #000;
+  background: #f3961c;
+  border-radius: 10px;
+}
+
+/* creates triangle */
+.triangle-isosceles:after {
+  content: "";
+  display: block; 
+  position: absolute;
+  bottom: -1em;
+  left: 5em;
+  width: 0;
+  border-width: 15px 15px 0;
+  border-style: solid;
+  border-color: #f3961c transparent;
+}
+
+.triangle-isosceles2 {
+  position: relative;
+  padding: 5%;
+  margin: 5em 0 3em;
+  color: #000;
+  background: #f3961c;
+  border-radius: 10px;
+}
+/* creates triangle */
+.triangle-isosceles2:after {
+  content: "";
+  display: block; 
+  position: absolute;
+  bottom: -1em;
+  left: 5em;
+  width: 0;
+  border-width: 15px 15px 0;
+  border-style: solid;
+  border-color: #f3961c transparent;
+}
+
+.container{
+	width: 100%;
+}
+
 .topMenu{
 	text-decoration: none;
  	color: purple; 
 }
 
-res-name{
+.email-phn{
+	/*margin-top: 50vh;*/
+	position: relative;
+	bottom:0;
+}
+
+.res-name{
 	font-family: trebuchet;
 	font-style: small-caps;
 }
 
 .logo{
-	max-width: 40vw;
-	max-height: 40vw;
-}
-
-.centered{
-	text-align: center;
+	margin: 0;
+	width: 50%;
+/*	max-width: 40vw;
+	max-height: 40vw;*/
 }
 
 .title{
@@ -22,14 +94,13 @@ res-name{
 }
 
 .home, body{
+	width: 100%;
 	background-color: #717ccb;
 	color:pink;
 }
 
-.left-butt{
-	float
+.footer{
+	margin-top: 0px;
+	font-size: 14pt;
 }
 
-/*.page{
-	background-image: url("jplug.png");
-}*/
