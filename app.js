@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("jfet", [ "ui.bootstrap"])
+angular.module("jfet", [ "ui.bootstrap", 'duScroll'])
 
 .config(function( ){
 //$stateProvider, $urlRouterProvider

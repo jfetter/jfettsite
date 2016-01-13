@@ -1,10 +1,18 @@
 angular.module("jfet")
 
-.controller("navCtrl", function($scope){
+.controller("navCtrl", function($scope, $document){
 	$scope.title = "Jillian Fetter"
 	$scope.subtitle ="Javascript Web Developer"
 	$scope.showProjects = false; 
 	$scope.showContact = false;
+
+	var top = 400;
+  var duration = 2000; //milliseconds
+
+   $document.scrollTop(top, duration).then(function() {
+      console.log('You just scrolled to the top!');
+    });
+
 	$scope.talkingPoints = {comment: "have you seen what she can do with angular", response: "yeah it's amazing"};
 	var conversation = [
 	//{comment: "have you seen what she can do with angular", response: "yeah it's amazing"}, 

@@ -7,15 +7,19 @@
 }
 
 .each-project{
+  border: 2px solid green;
 	margin: 5%;
+  padding: 10%;
+  background-color: black;
 }
 
-.contact-display{
-
+.pro-row{
+  
 }
 
 .projects-view{
-	margin: 5% ;
+  border: 2px solid red;
+	margin: 20% ;
 }
 
 /*speech bubble style from: http://nicolasgallagher.com/pure-css-speech-bubbles */
@@ -82,9 +86,15 @@
 	font-style: small-caps;
 }
 
+.myname, .subtitle{
+  padding: 0;
+  margin: 0;
+}
+
 .logo{
-	margin: 0;
-	width: 50%;
+  padding-right: 5%;
+	margin: -5%, 7%, -5%, -5%;
+	width: 25%;
 /*	max-width: 40vw;
 	max-height: 40vw;*/
 }
