@@ -1,6 +1,6 @@
 angular.module("jfet")
 
-.directive("contactDisplay", function(){
+.directive("contactView", function(){
 	return{
 		templateUrl: "directives/contact/contact.html"
 	};

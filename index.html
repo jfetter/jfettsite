@@ -11,101 +11,72 @@
 	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
 </head>
 <body ng-controller="navCtrl">
+	<!-- 	<div ui-view> -->
 
-	<div class="navbar navbar-static-top">
+<!-- dummy navbar to hold space for fixed nav bar -->
+	<div>
+		<page-top class="row" />
+	</div>
+
+	<div class="navbar navbar-fixed-top">
 		<nav-bar />
 	</div>
-	<!-- 	<div ui-view></div> -->
 
+
+
+	<div class="navbar-fixed-bottom">
+		<footer-bar  />
+	</div>
 
 	<div class="container home">
 
-		<div class="row">
+		<div class="row name-job">
 			<div class="col-xs-12 text-centered">
 				<div class="row my-name">
-			<h1 class=" text-center">{{title}}</h1>
+					<h1 class=" text-center">{{title}}</h1>
 				</div>
-				<div class="row">
-					<div class="col-sm-5"></div>
-  				<img class="text-center logo col-sm-2" ng-src="images/jlog1.png" alt="">
-					<div class="col-sm-5"></div>
-  			</div>
-	
-			
+				<div class="row text-center">
+					<div class="col-sm-4"></div>
+					<img class="text-center logo col-sm-2" ng-src="images/jlog1.png" alt="">
+					<div class="col-sm-4"></div>
+				</div>
+
 			<div class="row">
 				<div class="col-sm-12 text-center">
-			<h3 class="subtitle">{{subtitle}}</h3>
-			</div>
+					<h3 class="subtitle">{{subtitle}}</h3>
+				</div>
 			</div>
 			
 		</div>
 	</div>
 
+	<!-- ng-hide="showProjects || showContact" -->
 	<div class="row">
-		 <!-- LEFT HALF SCREEN IS PROJECTS -->
-	<div  ng-show="showProjects" class="projects-view text-center col-xs-12 ">
-			<div class="row pro-row">
-		<div  class=" each-project col-xs-4" ng-repeat="project in projects">
-
-				<div class="row">
-					<img class="col-xs-12" ng-src={{project.img}} alt="" width="200">
-				</div>
-			<div class="row text-centered">
-				<a class="btn btn-success " ng-href={{project.github}} >Git Hub</a>
-				<a class="btn btn-info " ng-href={{project.url}}>App</a>
-				</div>
-			
+		<con-bubbles id="con-bubbles"/>
 	</div>
-	</div>
-</div>
- <!-- OR CON BUBBLES -->
-
-<div ng-hide="showProjects || showContact" class="con-bubbles">
-	
-	<div class="row">	
-		<div class="col-xs-6">
-		<div class="triangle-isosceles">
-			<span>{{talkingPoints.comment}}</span>
-		</div>
-	</div>
-			<div class="col-xs-6">
-		<div  class="triangle-isosceles2">
-			<span>{{talkingPoints.response}}</span>
-		</div>
-	</div>
-</div>
 
 	<div class="row">
-		<div >
-		<img class="col-xs-12 col-centered" ng-src="images/sil-talk.png" alt="">
-		</div>
+		<project-view id="project-view"/>
 	</div>
-</div>
+
+	<!-- ng-show="showContact" -->
+	<div  class="contact-display">
+		<contact-view id="contact-view"/>
+	</div>
+
+
+
+
+	<div>
+	 	<resume-view id="resume-view" />
+	</div>
 
 </div>
 
-<div ng-show="showContact" class="contact-display">
-	<contact-display />
-</div>
-
-		<div class="navbar-static-bottom">
-			<footer-bar  />
-		</div>
-
-
-	<div class="row">
-		<div class="col-sm-12">
-		<embed ng-src="images/resume.pdf" style="width:100%;height:1000px">
-		</embed>
-		<a href="#anchor" du-smooth-scroll duration="5000">Scroll it!</a>
-		</div>
-</div>
-
-</div>
-
+<!-- </div>  ui-view-->
 
 	<script src="bower_components/angular/angular.js"></script>
-	<!-- <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script> -->
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 	<script src="bower_components/angular-scroll/angular-scroll.js"></script>
@@ -116,5 +87,6 @@
 	<script src="directives/contact/contact.js"></script>
 	<script src="directives/project/project.js"></script>
 	<script src="directives/footer-bar/footer-bar.js"></script>
+	<script src="directives/conbubbles/con-bubbles.js"></script>
 </body>
 </html>
